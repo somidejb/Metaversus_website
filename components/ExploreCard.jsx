@@ -1,9 +1,9 @@
 'use client';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from '../styles';
-import {fadeIn} from '../utils/motion';
+import { fadeIn } from '../utils/motion';
 
-const ExploreCard = ({id, imgUrl, title, index, active, handleClick}) => (
+const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
   <motion.div
     variants={fadeIn('right', 'spring', index * 0.5, 1.7)}
     className={`relative 
@@ -12,13 +12,13 @@ const ExploreCard = ({id, imgUrl, title, index, active, handleClick}) => (
     ease-out-flex cursor-pointer`}
     onClick={() => handleClick(id)}
   >
-    <img 
+    <img
       src={imgUrl}
       alt={title}
-      className = "absolute w-full h-full object-cover rounded-[24px]"
+      className="absolute w-full h-full object-cover rounded-[24px]"
     />
     {active !== id ? (
-      <h3 className ="font-semibold sm:text-[26px] text-[18px] text-white absolute
+      <h3 className="font-semibold sm:text-[26px] text-[18px] text-white absolute
       z-0 lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]">
         {title}
       </h3>
@@ -27,7 +27,7 @@ const ExploreCard = ({id, imgUrl, title, index, active, handleClick}) => (
       bg-[rgba(0,0,0,0.5)] rounded-b-[24px]">
         <div className={`${styles.flexCenter} w-[60px] h-[60px] rounded-[24px]
         glassmorphism mb-[16px]`}>
-          <img 
+          <img
             src="/headset.svg"
             alt="headset"
             className="w-1/2 h-1/2 object-contain"
